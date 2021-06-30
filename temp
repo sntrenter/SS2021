@@ -1,0 +1,23 @@
+    #ascii offset
+    offset = 97 
+    newString = ""
+
+    for i in range(len(msg)):
+        print("#############################################################")
+        if(ord(msg[i])==32):
+            newString = newString + " "
+            print("######space############")
+            continue
+            
+        print(i)
+        #add each value
+        num = ord(msg[i]) + (ord(key[i%len(key)]) - offset)
+        print(msg[i])
+        print("msgchar: ",ord(msg[i]))
+        print("keychar: ", (ord(key[i%len(key)]) - offset))
+        print("num: ",num) 
+        print("newnum:",num,chr(num))
+        num = 122 - (num % 26)
+        print("newnum:",num,chr(num))
+        newString = newString + chr(num)
+        print(newString)
