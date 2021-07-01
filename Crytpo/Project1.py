@@ -1,5 +1,6 @@
 import re
-
+import itertools
+import string
 
 #TODO  Write a function that will take in two strings and encrypt the first string with the second string using the Vigenere ciphere.
 #The first string is the plaintext and your function should ignore all non-alphabetic characters (or your code can remove them from the string). All uppercase letters should be treated as lowercase letters (or you can convert the string to all lowercase letters). 
@@ -51,14 +52,32 @@ def decrypt(msg = "kiqli hhupi", key = "default"):
             num = num + 26
         newString = newString + chr(num)
         keypos += 1
-    print("message:")
-    print(msg)
-    print("key:")
-    print(key)
-    print("decrypted:")
-    print(newString)
+    #print("message:")
+    #print(msg)
+    #print("key:")
+    #print(key)
+    #print("decrypted:")
+    #print(newString)
     return newString
 #TODO Once these functions are completed, have your main body prompt the user for a string to encode, then a key string, then perform the encryption of the plaintext and output the ciphertest.. Then decrypt it and show the resulting plaintext.
+
+def decipher(msg = "qwertyu",sub = "qwerty",keysize = 5):
+    alphas = string.ascii_lowercase
+    i = 1
+    print("trying to dycrypt")
+    while i < keysize + 1:
+        keys = list(itertools.product(alphas,repeat=i))
+        print(len(keys))
+        for j in range(len(keys)):
+            keys[j] = ''.join(keys[j])
+
+        for k in keys:
+            if sub in decrypt(msg,k):
+                print("possible solution:",k)
+                print("decoded msg: ",decrypt(msg,k))
+
+
+        i+=1
 
 
 
@@ -67,5 +86,5 @@ def decrypt(msg = "kiqli hhupi", key = "default"):
 def main():
     encrypt()
     decrypt()
-    #encrypt("abcdefghijkl mnopqrstuvwxyz","ab")
+    decipher("boil ma h vxvg sogk kppaiz p htxm ahx yv p htxm ahx yv p htxm ahx yv","cipher")
 main()
