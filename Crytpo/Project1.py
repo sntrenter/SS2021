@@ -61,7 +61,7 @@ def decrypt(msg = "kiqli hhupi", key = "default"):
     return newString
 #TODO Once these functions are completed, have your main body prompt the user for a string to encode, then a key string, then perform the encryption of the plaintext and output the ciphertest.. Then decrypt it and show the resulting plaintext.
 
-def decipher(msg = "qwertyu",sub = "qwerty",keysize = 5):
+def decipher(msg = "",sub = "",keysize = 5):
     alphas = string.ascii_lowercase
     i = 1
     print("trying to dycrypt")
