@@ -1,0 +1,347 @@
+sntre@DESKTOP-D7CHVRH MINGW64 ~/Documents/GitHub/SS2021 (master)
+$ C:/Users/sntre/anaconda3/python.exe c:/Users/sntre/Documents/GitHub/SS2021/Crytpo/Project1.py
+encrypt
+enter message to encrypt: this is a test msg to decrypt
+enter key to encrypt with: test
+the encrypted msg:  mlal bw s mxwl flk lh wiukrtl
+decrypting
+decrypted message:  this is a test msg to decrypt
+decipher
+give cipher text: mlal bw s mxwl flk lh wiukrtl 
+give substring that should exist: test
+what is the max keysize: 5
+trying to dycrypt
+26
+continue?(y/n):
+676
+continue?(y/n):
+17576
+continue?(y/n):
+456976
+possible solution: decr
+decoded msg:  jhyu ys q vusj oig jq testopj
+possible solution: nbsr
+decoded msg:  zkiu ov a vkvt oyj tq jhctest
+possible solution: test
+decoded msg:  this is a test msg to decrypt
+possible solution: this
+decoded msg:  test ip k uepd nsd dp dbmsymd
+possible solution: ypqs
+decoded msg:  owkt dh c uzhv nnv vp ytestev
+possible solution: zabg
+decoded msg:  nlzf cw r gywk zmk kb xitestk
+continue?(y/n):
+11881376
+possible solution: adecr
+decoded msg:  miwj kw p ivfl chi uh testrqh
+possible solution: bdecr
+decoded msg:  liwj kv p ivfk chi ug testqqh
+possible solution: cdecr
+decoded msg:  kiwj ku p ivfj chi uf testpqh
+possible solution: ddecr
+decoded msg:  jiwj kt p ivfi chi ue testoqh
+possible solution: edecr
+decoded msg:  iiwj ks p ivfh chi ud testnqh
+possible solution: fdecr
+decoded msg:  hiwj kr p ivfg chi uc testmqh
+possible solution: gdecr
+decoded msg:  giwj kq p ivff chi ub testlqh
+possible solution: hdecr
+decoded msg:  fiwj kp p ivfe chi ua testkqh
+possible solution: idecr
+decoded msg:  eiwj ko p ivfd chi uz testjqh
+possible solution: jdecr
+decoded msg:  diwj kn p ivfc chi uy testiqh
+possible solution: kdecr
+decoded msg:  ciwj km p ivfb chi ux testhqh
+possible solution: ldecr
+decoded msg:  biwj kl p ivfa chi uw testgqh
+possible solution: mdecr
+decoded msg:  aiwj kk p ivfz chi uv testfqh
+possible solution: nbsar
+decoded msg:  zkil kj r uxfy etk uu vqutest
+possible solution: nbsbr
+decoded msg:  zkik kj r uwfy etj uu vqttest
+possible solution: nbscr
+decoded msg:  zkij kj r uvfy eti uu vqstest
+possible solution: nbsdr
+decoded msg:  zkii kj r uufy eth uu vqrtest
+possible solution: nbser
+decoded msg:  zkih kj r utfy etg uu vqqtest
+possible solution: nbsfr
+decoded msg:  zkig kj r usfy etf uu vqptest
+possible solution: nbsgr
+decoded msg:  zkif kj r urfy ete uu vqotest
+possible solution: nbshr
+decoded msg:  zkie kj r uqfy etd uu vqntest
+possible solution: nbsir
+decoded msg:  zkid kj r upfy etc uu vqmtest
+possible solution: nbsjr
+decoded msg:  zkic kj r uofy etb uu vqltest
+possible solution: nbskr
+decoded msg:  zkib kj r unfy eta uu vqktest
+possible solution: nbslr
+decoded msg:  zkia kj r umfy etz uu vqjtest
+possible solution: nbsmr
+decoded msg:  zkiz kj r ulfy ety uu vqitest
+possible solution: nbsnr
+decoded msg:  zkiy kj r ukfy etx uu vqhtest
+possible solution: nbsor
+decoded msg:  zkix kj r ujfy etw uu vqgtest
+possible solution: nbspr
+decoded msg:  zkiw kj r uify etv uu vqftest
+possible solution: nbsqr
+decoded msg:  zkiv kj r uhfy etu uu vqetest
+possible solution: nbsrr
+decoded msg:  zkiu kj r ugfy ett uu vqdtest
+possible solution: nbssr
+decoded msg:  zkit kj r uffy ets uu vqctest
+possible solution: nbstr
+decoded msg:  zkis kj r uefy etr uu vqbtest
+possible solution: nbsur
+decoded msg:  zkir kj r udfy etq uu vqatest
+possible solution: nbsvr
+decoded msg:  zkiq kj r ucfy etp uu vqztest
+possible solution: nbswr
+decoded msg:  zkip kj r ubfy eto uu vqytest
+possible solution: nbsxr
+decoded msg:  zkio kj r uafy etn uu vqxtest
+possible solution: nbsyr
+decoded msg:  zkin kj r uzfy etm uu vqwtest
+possible solution: nbszr
+decoded msg:  zkim kj r uyfy etl uu vqvtest
+possible solution: ndecr
+decoded msg:  ziwj kj p ivfy chi uu testeqh
+possible solution: odecr
+decoded msg:  yiwj ki p ivfx chi ut testdqh
+possible solution: pdecr
+decoded msg:  xiwj kh p ivfw chi us testcqh
+possible solution: qdecr
+decoded msg:  wiwj kg p ivfv chi ur testbqh
+possible solution: rdecr
+decoded msg:  viwj kf p ivfu chi uq testaqh
+possible solution: satte
+decoded msg:  ulhs xe s test fsr hp wpbgzts
+possible solution: sbtte
+decoded msg:  ukhs xe r test esr hp vpbgzss
+possible solution: sctte
+decoded msg:  ujhs xe q test dsr hp upbgzrs
+possible solution: sdecr
+decoded msg:  uiwj ke p ivft chi up testzqh
+possible solution: sdtte
+decoded msg:  uihs xe p test csr hp tpbgzqs
+possible solution: sette
+decoded msg:  uhhs xe o test bsr hp spbgzps
+possible solution: sftte
+decoded msg:  ughs xe n test asr hp rpbgzos
+possible solution: sgtte
+decoded msg:  ufhs xe m test zsr hp qpbgzns
+possible solution: shtte
+decoded msg:  uehs xe l test ysr hp ppbgzms
+possible solution: sitte
+decoded msg:  udhs xe k test xsr hp opbgzls
+possible solution: sjtte
+decoded msg:  uchs xe j test wsr hp npbgzks
+possible solution: sktte
+decoded msg:  ubhs xe i test vsr hp mpbgzjs
+possible solution: sltte
+decoded msg:  uahs xe h test usr hp lpbgzis
+possible solution: smtte
+decoded msg:  uzhs xe g test tsr hp kpbgzhs
+possible solution: sntte
+decoded msg:  uyhs xe f test ssr hp jpbgzgs
+possible solution: sotte
+decoded msg:  uxhs xe e test rsr hp ipbgzfs
+possible solution: sptte
+decoded msg:  uwhs xe d test qsr hp hpbgzes
+possible solution: sqtte
+decoded msg:  uvhs xe c test psr hp gpbgzds
+possible solution: srtte
+decoded msg:  uuhs xe b test osr hp fpbgzcs
+possible solution: sstte
+decoded msg:  uths xe a test nsr hp epbgzbs
+possible solution: sttte
+decoded msg:  ushs xe z test msr hp dpbgzas
+possible solution: sutte
+decoded msg:  urhs xe y test lsr hp cpbgzzs
+possible solution: svtte
+decoded msg:  uqhs xe x test ksr hp bpbgzys
+possible solution: swtte
+decoded msg:  uphs xe w test jsr hp apbgzxs
+possible solution: sxtte
+decoded msg:  uohs xe v test isr hp zpbgzws
+possible solution: sytte
+decoded msg:  unhs xe u test hsr hp ypbgzvs
+possible solution: sztte
+decoded msg:  umhs xe t test gsr hp xpbgzus
+possible solution: tdecr
+decoded msg:  tiwj kd p ivfs chi uo testyqh
+possible solution: thisa
+decoded msg:  test bd l efws yds lo packymd
+possible solution: thisb
+decoded msg:  test ad l efvs yds ko pacjymd
+possible solution: thisc
+decoded msg:  test zd l efus yds jo paciymd
+possible solution: thisd
+decoded msg:  test yd l efts yds io pachymd
+possible solution: thise
+decoded msg:  test xd l efss yds ho pacgymd
+possible solution: thisf
+decoded msg:  test wd l efrs yds go pacfymd
+possible solution: thisg
+decoded msg:  test vd l efqs yds fo paceymd
+possible solution: thish
+decoded msg:  test ud l efps yds eo pacdymd
+possible solution: thisi
+decoded msg:  test td l efos yds do paccymd
+possible solution: thisj
+decoded msg:  test sd l efns yds co pacbymd
+possible solution: thisk
+decoded msg:  test rd l efms yds bo pacaymd
+possible solution: thisl
+decoded msg:  test qd l efls yds ao paczymd
+possible solution: thism
+decoded msg:  test pd l efks yds zo pacyymd
+possible solution: thisn
+decoded msg:  test od l efjs yds yo pacxymd
+possible solution: thiso
+decoded msg:  test nd l efis yds xo pacwymd
+possible solution: thisp
+decoded msg:  test md l efhs yds wo pacvymd
+possible solution: thisq
+decoded msg:  test ld l efgs yds vo pacuymd
+possible solution: thisr
+decoded msg:  test kd l effs yds uo pactymd
+possible solution: thiss
+decoded msg:  test jd l efes yds to pacsymd
+possible solution: thist
+decoded msg:  test id l efds yds so pacrymd
+possible solution: thisu
+decoded msg:  test hd l efcs yds ro pacqymd
+possible solution: thisv
+decoded msg:  test gd l efbs yds qo pacpymd
+possible solution: thisw
+decoded msg:  test fd l efas yds po pacoymd
+possible solution: thisx
+decoded msg:  test ed l efzs yds oo pacnymd
+possible solution: thisy
+decoded msg:  test dd l efys yds no pacmymd
+possible solution: thisz
+decoded msg:  test cd l efxs yds mo paclymd
+possible solution: udecr
+decoded msg:  siwj kc p ivfr chi un testxqh
+possible solution: vdecr
+decoded msg:  riwj kb p ivfq chi um testwqh
+possible solution: wdecr
+decoded msg:  qiwj ka p ivfp chi ul testvqh
+possible solution: xdecr
+decoded msg:  piwj kz p ivfo chi uk testuqh
+possible solution: yapqs
+decoded msg:  ollv jy s xhen fwu tj wtesttw
+possible solution: ybpqs
+decoded msg:  oklv jy r xhen ewu tj vtestsw
+possible solution: ycpqs
+decoded msg:  ojlv jy q xhen dwu tj utestrw
+possible solution: ydecr
+decoded msg:  oiwj ky p ivfn chi uj testtqh
+possible solution: ydpqs
+decoded msg:  oilv jy p xhen cwu tj ttestqw
+possible solution: yepqs
+decoded msg:  ohlv jy o xhen bwu tj stestpw
+possible solution: yfpqs
+decoded msg:  oglv jy n xhen awu tj rtestow
+possible solution: ygpqs
+decoded msg:  oflv jy m xhen zwu tj qtestnw
+possible solution: yhpqs
+decoded msg:  oelv jy l xhen ywu tj ptestmw
+possible solution: yipqs
+decoded msg:  odlv jy k xhen xwu tj otestlw
+possible solution: yjpqs
+decoded msg:  oclv jy j xhen wwu tj ntestkw
+possible solution: ykpqs
+decoded msg:  oblv jy i xhen vwu tj mtestjw
+possible solution: ylpqs
+decoded msg:  oalv jy h xhen uwu tj ltestiw
+possible solution: ympqs
+decoded msg:  ozlv jy g xhen twu tj ktesthw
+possible solution: ynpqs
+decoded msg:  oylv jy f xhen swu tj jtestgw
+possible solution: yopqs
+decoded msg:  oxlv jy e xhen rwu tj itestfw
+possible solution: yppqs
+decoded msg:  owlv jy d xhen qwu tj htestew
+possible solution: yqpqs
+decoded msg:  ovlv jy c xhen pwu tj gtestdw
+possible solution: yrpqs
+decoded msg:  oulv jy b xhen owu tj ftestcw
+possible solution: yspqs
+decoded msg:  otlv jy a xhen nwu tj etestbw
+possible solution: ytpqs
+decoded msg:  oslv jy z xhen mwu tj dtestaw
+possible solution: yupqs
+decoded msg:  orlv jy y xhen lwu tj ctestzw
+possible solution: yvpqs
+decoded msg:  oqlv jy x xhen kwu tj btestyw
+possible solution: ywpqs
+decoded msg:  oplv jy w xhen jwu tj atestxw
+possible solution: yxpqs
+decoded msg:  oolv jy v xhen iwu tj ztestww
+possible solution: yypqs
+decoded msg:  onlv jy u xhen hwu tj ytestvw
+possible solution: yzpqs
+decoded msg:  omlv jy t xhen gwu tj xtestuw
+possible solution: zaabg
+decoded msg:  nlak vx s mwqm flj fi witestl
+possible solution: zabbg
+decoded msg:  nlzk vx s lwqm fkj fi whtestk
+possible solution: zacbg
+decoded msg:  nlyk vx s kwqm fjj fi wgtestj
+possible solution: zadbg
+decoded msg:  nlxk vx s jwqm fij fi wftesti
+possible solution: zaebg
+decoded msg:  nlwk vx s iwqm fhj fi wetesth
+possible solution: zafbg
+decoded msg:  nlvk vx s hwqm fgj fi wdtestg
+possible solution: zagbg
+decoded msg:  nluk vx s gwqm ffj fi wctestf
+possible solution: zahbg
+decoded msg:  nltk vx s fwqm fej fi wbteste
+possible solution: zaibg
+decoded msg:  nlsk vx s ewqm fdj fi watestd
+possible solution: zajbg
+decoded msg:  nlrk vx s dwqm fcj fi wztestc
+possible solution: zakbg
+decoded msg:  nlqk vx s cwqm fbj fi wytestb
+possible solution: zalbg
+decoded msg:  nlpk vx s bwqm faj fi wxtesta
+possible solution: zambg
+decoded msg:  nlok vx s awqm fzj fi wwtestz
+possible solution: zanbg
+decoded msg:  nlnk vx s zwqm fyj fi wvtesty
+possible solution: zaobg
+decoded msg:  nlmk vx s ywqm fxj fi wutestx
+possible solution: zapbg
+decoded msg:  nllk vx s xwqm fwj fi wttestw
+possible solution: zaqbg
+decoded msg:  nlkk vx s wwqm fvj fi wstestv
+possible solution: zarbg
+decoded msg:  nljk vx s vwqm fuj fi wrtestu
+possible solution: zasbg
+decoded msg:  nlik vx s uwqm ftj fi wqtestt
+possible solution: zatbg
+decoded msg:  nlhk vx s twqm fsj fi wptests
+possible solution: zaubg
+decoded msg:  nlgk vx s swqm frj fi wotestr
+possible solution: zavbg
+decoded msg:  nlfk vx s rwqm fqj fi wntestq
+possible solution: zawbg
+decoded msg:  nlek vx s qwqm fpj fi wmtestp
+possible solution: zaxbg
+decoded msg:  nldk vx s pwqm foj fi wltesto
+possible solution: zaybg
+decoded msg:  nlck vx s owqm fnj fi wktestn
+possible solution: zazbg
+decoded msg:  nlbk vx s nwqm fmj fi wjtestm
+possible solution: zdecr
+decoded msg:  niwj kx p ivfm chi ui testsqh
+continue?(y/n):n
