@@ -25,17 +25,20 @@
                                     <constraint firstAttribute="width" constant="100" id="qJe-cm-Hg9"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AWJ-Lh-Vvo">
-                                <rect key="frame" x="0.0" y="0.0" width="232" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lH5-Vd-f6Q">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="398"/>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1YN-UJ-5U6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="foC-Xb-7FH"/>
+                            <constraint firstItem="lH5-Vd-f6Q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="itE-ln-fXj"/>
+                            <constraint firstItem="1YN-UJ-5U6" firstAttribute="width" secondItem="lH5-Vd-f6Q" secondAttribute="width" id="nNv-Ds-5BW"/>
                             <constraint firstItem="1YN-UJ-5U6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nlz-9K-dQq"/>
+                            <constraint firstItem="lH5-Vd-f6Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sGi-fi-1LK"/>
+                            <constraint firstItem="lH5-Vd-f6Q" firstAttribute="bottom" secondItem="1YN-UJ-5U6" secondAttribute="top" id="z3d-5Z-Sub"/>
                         </constraints>
                     </view>
                     <connections>
@@ -44,13 +47,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="88"/>
+            <point key="canvasLocation" x="34.782608695652179" y="87.723214285714278"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
