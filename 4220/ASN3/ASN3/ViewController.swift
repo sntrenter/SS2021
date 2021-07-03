@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     //greenview
-    @IBOutlet weak var GreenView: UIView!
+    @IBOutlet weak var GreenView: UIView!//ignore this
     //blueview
     
     override func viewDidLoad() {
