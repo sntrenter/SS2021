@@ -8,10 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //greenview
-    @IBOutlet weak var GreenView: UIView!//ignore this
-    //blueview
-    
+    //notsure the proper way to remove this
+    @IBOutlet weak var GreenView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
