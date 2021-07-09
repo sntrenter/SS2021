@@ -10,31 +10,32 @@ import PokemonUIKit
 // - Conform it to the `PokédexMenuItemAction` protocol.
 // - Implement the required methods.
 
-
-final class ViewPokemonDetailsAction: PokédexMenuItemAction{
-    var title: String = ""
+final class ViewPokemonDetailsAction: PokédexMenuItemAction {
     
-    var image: UIImage?
+    //private let service: PokémonService
     
-    func viewController(for pokémon: Pokémon) -> UIViewController {
-        return PokemonDetailsViewController(pokémon: pokémon)
+    let title: String//LocalizedString.title.value
+    
+    var image: UIImage? { UIImage(systemName: "photo") }
+    
+    init() {
+        self.title = "Veiw Pokemon"
     }
-    
-    
-    
-    
 }
 
+extension ViewPokemonDetailsAction {
+    
+    func viewController(for pokémon: Pokémon) -> UIViewController {
+        
+        return PokemonDetailsViewController(pokémon: pokémon)
+    }
+}
 
-//final class ViewPokémonSpritesAction: PokédexMenuItemAction {
+//extension ViewPokemonDetailsAction {
 //
-//    private let service: PokémonService
+//    private enum LocalizedString: String {
+//        case title = "pokemon-sprites-action.title.text"
 //
-//    let title: String = LocalizedString.title.value
-//
-//    var image: UIImage? { UIImage(systemName: "photo") }
-//
-//    init(service: PokémonService) {
-//        self.service = service
+//        var value: String { Bundle.module.localizedString(forKey: rawValue, comment: nil)}
 //    }
 //}

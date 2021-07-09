@@ -11,17 +11,15 @@ import PokemonFoundation
 // HINT: - This class will be used by `ViewPokemonDetailsAction`.
 // HINT: - Make sure the view controller takes in a `Pokémon` as a parameter!
 
-public final class PokemonDetailsViewController: UIViewController{
-    
-    
+public final class PokemonDetailsViewController: UIViewController {
     
     private let pokémon: Pokémon
     //private let service: PokémonService
     
-    init(pokémon: Pokémon){//, service: PokémonService) {
+    init(pokémon: Pokémon) {
         self.pokémon = pokémon
         //self.service = service
-        
+        print(pokémon.name)
         super.init(nibName: nil, bundle: nil)
     }
     
