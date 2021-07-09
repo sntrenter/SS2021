@@ -10,3 +10,22 @@ import PokemonFoundation
 //
 // HINT: - This class will be used by `ViewPokemonDetailsAction`.
 // HINT: - Make sure the view controller takes in a `Pokémon` as a parameter!
+
+public final class PokemonDetailsViewController: UIViewController{
+    
+    
+    
+    private let pokémon: Pokémon
+    //private let service: PokémonService
+    
+    init(pokémon: Pokémon){//, service: PokémonService) {
+        self.pokémon = pokémon
+        //self.service = service
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

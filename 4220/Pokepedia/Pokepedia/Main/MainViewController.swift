@@ -2,6 +2,7 @@ import UIKit
 
 import PokemonUIKit
 
+
 final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ extension MainViewController {
             rootViewController: PokédexViewController(
                 menuItemActions: [
                 // TODO: - Add custom `PokédexMenuItemAction`s here.
+                
                 ]
             )
         )
