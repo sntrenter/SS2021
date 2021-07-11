@@ -75,6 +75,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2b-Ku-ffy">
+                                <rect key="frame" x="187.5" y="393" width="39" height="30.5"/>
+                                <state key="normal" title="!CRY!"/>
+                                <connections>
+                                    <action selector="pokeCryButton:" destination="P19-GF-wJj" eventType="touchDown" id="pqE-Sx-B2V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eVr-uC-0tN"/>
                         <color key="backgroundColor" red="0.86305764875342506" green="0.97259389437171928" blue="0.98328930139541626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -90,12 +97,14 @@
                             <constraint firstItem="5J9-KZ-W8e" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="WVC-E4-OQp"/>
                             <constraint firstItem="0ei-W5-0VA" firstAttribute="top" secondItem="bCk-qo-EUI" secondAttribute="bottom" constant="7" id="Y70-Ba-TTO"/>
                             <constraint firstItem="SKd-6z-wkf" firstAttribute="top" secondItem="lUW-0V-HHV" secondAttribute="bottom" constant="7" id="Z54-fA-Q2N"/>
+                            <constraint firstItem="F2b-Ku-ffy" firstAttribute="top" secondItem="OLm-wV-R1w" secondAttribute="bottom" constant="20" id="ZbO-kU-XL2"/>
                             <constraint firstItem="lUW-0V-HHV" firstAttribute="top" secondItem="pZC-I9-a15" secondAttribute="bottom" constant="7" id="b5r-V6-mAd"/>
                             <constraint firstItem="bCk-qo-EUI" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="dx8-sh-Cdw"/>
                             <constraint firstItem="bCk-qo-EUI" firstAttribute="top" secondItem="25I-65-BH6" secondAttribute="bottom" constant="7" id="eFN-5y-dbg"/>
                             <constraint firstItem="0ei-W5-0VA" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="jke-e4-Xkn"/>
                             <constraint firstItem="UOi-Y9-a7S" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="lWD-mE-OA8"/>
                             <constraint firstItem="gp2-YP-dmP" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="miY-n1-hcM"/>
+                            <constraint firstItem="F2b-Ku-ffy" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="nee-O2-3GA"/>
                             <constraint firstItem="OLm-wV-R1w" firstAttribute="top" secondItem="SKd-6z-wkf" secondAttribute="bottom" constant="7" id="ngH-q1-iAv"/>
                             <constraint firstItem="25I-65-BH6" firstAttribute="top" secondItem="5J9-KZ-W8e" secondAttribute="bottom" constant="7.5" id="oq2-SG-FdD"/>
                             <constraint firstItem="25I-65-BH6" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="zJH-wy-pBO"/>
@@ -104,6 +113,7 @@
                     <connections>
                         <outlet property="abiltiyLabel" destination="lUW-0V-HHV" id="a2L-P9-bFN"/>
                         <outlet property="baseEXPLabel" destination="25I-65-BH6" id="djo-3K-aHv"/>
+                        <outlet property="cryButton" destination="F2b-Ku-ffy" id="yTN-we-XUd"/>
                         <outlet property="heightLabel" destination="bCk-qo-EUI" id="BP9-aA-sda"/>
                         <outlet property="heldItemsLabel" destination="OLm-wV-R1w" id="082-W3-5NO"/>
                         <outlet property="idLabel" destination="5J9-KZ-W8e" id="O4f-Bd-bLx"/>
