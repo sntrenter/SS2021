@@ -23,7 +23,6 @@
 /* Begin PBXFileReference section */
 		D43350B326714410005CF466 /* PokemonDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PokemonDetails.storyboard; sourceTree = "<group>"; };
 		D4468081266FD9DF00D4B5EF /* ViewPokemonDetailsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPokemonDetailsAction.swift; sourceTree = "<group>"; };
-		D4AFA52726714D7900185DB1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D4AFA52926714E6000185DB1 /* swiftlint.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = swiftlint.sh; sourceTree = "<group>"; };
 		D4AFA52A26714E6000185DB1 /* todo.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = todo.sh; sourceTree = "<group>"; };
 		D4CF214C267026B80055C583 /* PokemonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +80,6 @@
 		D4DFC057266DA12C001EB1C7 = {
 			isa = PBXGroup;
 			children = (
-				D4AFA52726714D7900185DB1 /* README.md */,
 				D4DFC062266DA12C001EB1C7 /* Pokepedia */,
 				D4AFA52826714E6000185DB1 /* Scripts */,
 				D4DFC061266DA12C001EB1C7 /* Products */,
