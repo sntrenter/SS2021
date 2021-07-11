@@ -66,6 +66,7 @@ def decrypt(msg = "kiqli hhupi", key = "default"):
     #print(key)
     #print("decrypted:")
     #print(newString)
+    #delete me
     return newString
 #TODO Once these functions are completed, have your main body prompt the user for a string to encode, then a key string, then perform the encryption of the plaintext and output the ciphertest.. Then decrypt it and show the resulting plaintext.
 
