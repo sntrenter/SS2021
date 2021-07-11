@@ -16,7 +16,6 @@ extension MainViewController {
         return UINavigationController(
             rootViewController: PokédexViewController(
                 menuItemActions: [
-                // TODO: - Add custom `PokédexMenuItemAction`s here.
                     ViewPokemonDetailsAction() 
                 ]
             )

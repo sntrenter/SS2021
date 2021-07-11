@@ -1,29 +1,28 @@
 import UIKit
 
 import PokemonFoundation
+//optional chaining,default values
+//don't display entire array, display "first"
 
-// TODO: - Create a `UIViewController` subclass. (See following)
-//
-// - Name it `PokemonDetailsViewController`.
-// - Implement the viewcontroller requirements as listed in `Project 1`.
-// - Use `PokemonDetails.storyboard` to manage the UI layout.
-//
-// HINT: - This class will be used by `ViewPokemonDetailsAction`.
-// HINT: - Make sure the view controller takes in a `Pokémon` as a parameter!
+final class PokemonDetailsViewController: UIViewController {
+        
+    @IBOutlet weak var name: UILabel!
+    
+    private var pokémon: Pokémon!
 
-public final class PokemonDetailsViewController: UIViewController {
-    
-    private let pokémon: Pokémon
-    //private let service: PokémonService
-    
-    init(pokémon: Pokémon) {
-        self.pokémon = pokémon
-        //self.service = service
-        print(pokémon.name)
-        super.init(nibName: nil, bundle: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        name.text = pokémon?.name ?? "Name doesn't exist!"
+
     }
+}
+extension PokemonDetailsViewController {
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    static func instance(pokemon: Pokémon) -> PokemonDetailsViewController {
+        // swiftlint:disable:next force_cast
+        let viewController = UIStoryboard(name: "PokemonDetails", bundle: nil).instantiateInitialViewController() as! PokemonDetailsViewController
+        viewController.pokémon = pokemon
+        
+        return viewController
     }
 }
