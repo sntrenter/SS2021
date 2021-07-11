@@ -2,9 +2,7 @@ import UIKit
 
 import PokemonUIKit
 
-
 final class MainViewController: UIViewController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -14,14 +12,11 @@ final class MainViewController: UIViewController {
 }
 
 extension MainViewController {
-    
     private func makePokédexViewController() -> UINavigationController {
-
         return UINavigationController(
             rootViewController: PokédexViewController(
                 menuItemActions: [
-                // TODO: - Add custom `PokédexMenuItemAction`s here.
-                
+                    ViewPokemonDetailsAction() 
                 ]
             )
         )
