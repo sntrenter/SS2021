@@ -3,7 +3,6 @@ import PokemonFoundation
 import AVFoundation
 import PokemonCryKit
 
-
 final class PokemonDetailsViewController: UIViewController {
         
     @IBOutlet weak var nameLabel: UILabel!
