@@ -1,0 +1,18 @@
+00101001 key
+11100111 msg1
+01011101 msg2
+
+11001110 ciph1
+01110100 ciph2
+
+XOR ciphers:
+10111010
+
+bit 1: different
+bit 2: same
+bit 3: different
+bit 4: different
+bit 5: different
+bit 6: same
+bit 7: different
+bit 8: same
