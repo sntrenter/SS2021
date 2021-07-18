@@ -1,0 +1,6 @@
+def generate_files():
+    #1 (2digit) hex => 8 bit
+    one = bytes([random.randrange(0, 256) for _ in range(0, 16)]) #128
+    two = bytes([random.randrange(0, 256) for _ in range(0, 1000)])#1kb
+    three = bytes([random.randrange(0, 256) for _ in range(0, 1000000)])#1mb
+    return (one,two,three)

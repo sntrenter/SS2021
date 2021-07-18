@@ -1,0 +1,81 @@
+#####Task1#####
+b'mkm5ykpKeIF649DJajdMrxvX_gkBWxZqQyGGz85eajM='
+key:  b'mkm5ykpKeIF649DJajdMrxvX_gkBWxZqQyGGz85eajM='
+attack at dawn:  b'gAAAAABg9LiWXTuVBooqCJyjYTUSFqa2OhZpjYbKXaBFKO8JTVd0BT5nHCgkvschQxmQtQ4V280qtgNkcOhyOGJAtFbwe-Vbvw=='
+b'gAAAAABg9LiWXTuVBooqCJyjYTUSFqa2OhZpjYbKXaBFKO8JTVd0BT5nHCgkvschQxmQtQ4V280qtgNkcOhyOGJAtFbwe-Vbvw==' -decrypt-> b'attack at dawn'    
+#####Task2#####
+############################################
+128bit
+showing first ten chars:
+plaintext -> ciphertext -> plaintext
+VBNBOXA162
+d1ffe01dbd
+VBNBOXA162
+checking how many times I can
+encode/decode in 1 second:
+Number of encryp/decrypts:  25536
+############################################
+############################################
+moderatly sized file
+showing first ten chars:
+plaintext -> ciphertext -> plaintext
+ZSR1DWCG5C
+b28193ce66
+ZSR1DWCG5C
+checking how many times I can
+encode/decode in 1 second:
+Number of encryp/decrypts:  24770
+############################################
+############################################
+1mb
+showing first ten chars:
+plaintext -> ciphertext -> plaintext
+0B0H42DC2B
+35078a75d3
+0B0H42DC2B
+checking how many times I can
+encode/decode in 1 second:
+Number of encryp/decrypts:  235
+############################################
+############################################
+128bit
+showing first ten chars:
+plaintext -> ciphertext -> plaintext
+VBNBOXA162
+619b3aaafa
+VBNBOXA162
+checking how many times I can
+encode/decode in 1 second:
+Number of encryp/decrypts:  25477
+############################################
+############################################
+moderatly sized file
+showing first ten chars:
+plaintext -> ciphertext -> plaintext
+ZSR1DWCG5C
+7e4efbb019
+ZSR1DWCG5C
+checking how many times I can
+encode/decode in 1 second:
+Number of encryp/decrypts:  23576
+############################################
+############################################
+1mb
+showing first ten chars:
+plaintext -> ciphertext -> plaintext
+0B0H42DC2B
+c3d4fdb2c5
+0B0H42DC2B
+checking how many times I can
+encode/decode in 1 second:
+Number of encryp/decrypts:  219
+############################################
+############################################
+how big of a file could you decrypt in one second?  306000000  bytes
+how long would it take me to decrypt a short message with brute force:
+2^256 / how many decryptions I was able to do in one second = number of seconds to try all keys
+the above number / seconds in a year = number of years to brute force this
+143,069,569,033,364,026,228,207,255,906,711,312,031,358,398,373,928,510,982,364,609,272 years
+this number is so big I feel like it has to be wrong. But I'm also not doing anything to speed this up and it is a modern encryption standard, so It should be good at what it does.
+I'm also not using a GPU, or my multiple cores, so I could probably 
+cut down that number, but not enough to matter
