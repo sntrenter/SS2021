@@ -1,0 +1,11 @@
+[
+    {
+        "name": "Banana",
+        "points": 200,
+        "description": "A banana grown in Ecuador."
+    },
+    {
+        "name": "Orange",
+        "points": 100
+    }
+]
