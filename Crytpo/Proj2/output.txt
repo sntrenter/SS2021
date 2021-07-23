@@ -1,74 +1,78 @@
+sntre@DESKTOP-D7CHVRH MINGW64 ~/Documents/GitHub/SS2021/Crytpo/Proj2 (master)
+$ C:/Users/sntre/anaconda3/python.exe c:/Users/sntre/Documents/GitHub/SS2021/Crytpo/Proj2/proj2.py
 #####Task1#####
-b'mkm5ykpKeIF649DJajdMrxvX_gkBWxZqQyGGz85eajM='
-key:  b'mkm5ykpKeIF649DJajdMrxvX_gkBWxZqQyGGz85eajM='
-attack at dawn:  b'gAAAAABg9LiWXTuVBooqCJyjYTUSFqa2OhZpjYbKXaBFKO8JTVd0BT5nHCgkvschQxmQtQ4V280qtgNkcOhyOGJAtFbwe-Vbvw=='
-b'gAAAAABg9LiWXTuVBooqCJyjYTUSFqa2OhZpjYbKXaBFKO8JTVd0BT5nHCgkvschQxmQtQ4V280qtgNkcOhyOGJAtFbwe-Vbvw==' -decrypt-> b'attack at dawn'    
+env: python3
+rng: os.urandom(), commonly used for cryptography
+b'bD2Bfc9A2EtRWr3WBIOIV8k_07PO8Z2R7thdSrZKHRM='
+key:  b'bD2Bfc9A2EtRWr3WBIOIV8k_07PO8Z2R7thdSrZKHRM='
+attack at dawn:  b'gAAAAABg9L1bgGIAXqugkDcoTTJa9R0dd4AaDpum5hGS_VpU18U0O_7sHATq7HvFf_hLj4Z5Tq_SHtqjQlBfEfeVP8fSd1wJPg=='
+b'gAAAAABg9L1bgGIAXqugkDcoTTJa9R0dd4AaDpum5hGS_VpU18U0O_7sHATq7HvFf_hLj4Z5Tq_SHtqjQlBfEfeVP8fSd1wJPg==' -decrypt-> b'attack at dawn'    
 #####Task2#####
 ############################################
 128bit
 showing first ten chars:
 plaintext -> ciphertext -> plaintext
 VBNBOXA162
-d1ffe01dbd
+6f0afac5ec
 VBNBOXA162
 checking how many times I can
 encode/decode in 1 second:
-Number of encryp/decrypts:  25536
+Number of encryp/decrypts:  25647
 ############################################
 ############################################
 moderatly sized file
 showing first ten chars:
 plaintext -> ciphertext -> plaintext
 ZSR1DWCG5C
-b28193ce66
+d404124f27
 ZSR1DWCG5C
 checking how many times I can
 encode/decode in 1 second:
-Number of encryp/decrypts:  24770
+Number of encryp/decrypts:  25045
 ############################################
 ############################################
 1mb
 showing first ten chars:
 plaintext -> ciphertext -> plaintext
 0B0H42DC2B
-35078a75d3
+eea9182182
 0B0H42DC2B
 checking how many times I can
 encode/decode in 1 second:
-Number of encryp/decrypts:  235
+Number of encryp/decrypts:  232
 ############################################
 ############################################
 128bit
 showing first ten chars:
 plaintext -> ciphertext -> plaintext
 VBNBOXA162
-619b3aaafa
+5010082b90
 VBNBOXA162
 checking how many times I can
 encode/decode in 1 second:
-Number of encryp/decrypts:  25477
+Number of encryp/decrypts:  24174
 ############################################
 ############################################
 moderatly sized file
 showing first ten chars:
 plaintext -> ciphertext -> plaintext
 ZSR1DWCG5C
-7e4efbb019
+9936b59daf
 ZSR1DWCG5C
 checking how many times I can
 encode/decode in 1 second:
-Number of encryp/decrypts:  23576
+Number of encryp/decrypts:  23827
 ############################################
 ############################################
 1mb
 showing first ten chars:
 plaintext -> ciphertext -> plaintext
 0B0H42DC2B
-c3d4fdb2c5
+a9976d210b
 0B0H42DC2B
 checking how many times I can
 encode/decode in 1 second:
-Number of encryp/decrypts:  219
+Number of encryp/decrypts:  208
 ############################################
 ############################################
 how big of a file could you decrypt in one second?  306000000  bytes

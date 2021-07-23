@@ -89,6 +89,8 @@ def AESTest(keylen,plaintext):
 
 def main():
     print("#####Task1#####")
+    print("env: python3")
+    print("rng: os.urandom(), commonly used for cryptography")
     demo()
     print("#####Task2#####")
     f1 = readfile("file1.txt")
