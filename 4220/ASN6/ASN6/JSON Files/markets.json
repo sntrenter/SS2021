@@ -1,0 +1,46 @@
+[
+    {
+        "name": "Home Town Market",
+        "aisles": [
+            {
+                "name": "Produce",
+                "shelves": [
+                    {
+                        "name": "Discount Produce",
+                        "product": {
+                            "name": "Banana",
+                            "points": 200,
+                            "description": "A banana that's perfectly ripe."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Big City Market",
+        "aisles": [
+            {
+                "name": "Sale Aisle",
+                "shelves": [
+                    {
+                        "name": "Seasonal Sale",
+                        "product": {
+                            "name": "Chestnuts",
+                            "points": 700,
+                            "description": "Chestnuts that were roasted over an open fire."
+                        }
+                    },
+                    {
+                        "name": "Last Season's Clearance",
+                        "product": {
+                            "name": "Pumpkin Seeds",
+                            "points": 400,
+                            "description": "Seeds harvested from a pumpkin."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]
