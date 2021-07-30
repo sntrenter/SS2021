@@ -96,6 +96,56 @@ let store2JSON: [String: Any] =
         ]
     ]
 
+
+let store3JSON: [String: Any] = [
+        [
+            "name": "Home Town Market",
+            "aisles": [
+                [
+                    "name": "Produce",
+                    "shelves": [
+                        [
+                            "name": "Discount Produce",
+                            "product": [
+                                "name": "Banana",
+                                "points": 200,
+                                "description": "A banana that's perfectly ripe."
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ],
+        [
+            "name": "Big City Market",
+            "aisles": [
+                [
+                    "name": "Sale Aisle",
+                    "shelves": [
+                        [
+                            "name": "Seasonal Sale",
+                            "product": [
+                                "name": "Chestnuts",
+                                "points": 700,
+                                "description": "Chestnuts that were roasted over an open fire."
+                            ]
+                        ],
+                        [
+                            "name": "Last Season's Clearance",
+                            "product": [
+                                "name": "Pumpkin Seeds",
+                                "points": 400,
+                                "description": "Seeds harvested from a pumpkin."
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]
+
+
+
 struct Product: Decodable {
     let name: String?
     let points: Int?
@@ -131,4 +181,7 @@ print(newStore1.aisles?.first?.shelves?.first?.product?.name ?? "ope")
 
 //I had some issues with the second set of JSON objects but everything seems to load correctly now,
 //wasn't sure if you wanted us to print anything specific.
-
+print("#########")
+let store3Data: Data = try JSONSerialization.data(withJSONObject: store3JSON, options: [])
+let newStore3 = try decoder.decode(Store.self, from: store3Data)
+//I decided that maybe you didn't want me to split the JSON up so I try to do it all
