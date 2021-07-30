@@ -96,6 +96,8 @@ let store2JSON: [String: Any] =
         ]
     ]
 
+
+
 struct Product: Decodable {
     let name: String?
     let points: Int?
