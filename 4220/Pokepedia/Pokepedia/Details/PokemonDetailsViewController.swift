@@ -17,6 +17,9 @@ final class PokemonDetailsViewController: UIViewController {
     @IBOutlet weak var heldItemsLabel: UILabel!
     @IBOutlet weak var cryButton: UIButton!
     
+    //Proj 2
+    @IBOutlet weak var APITableView: UITableView!
+    
     private var pokémon: Pokémon!
     private var audioPlayer: AVAudioPlayer?
 
@@ -34,6 +37,76 @@ final class PokemonDetailsViewController: UIViewController {
         heldItemsLabel.text = "Held Item: " + (pokémon.heldItems?.first?.item?.name ?? "No Item?")
         audioPlayer = PokemonCryProvider().audioPlayer(forPokémonWithDisplayName: pokémon?.displayName ?? "")
         
+        //Proj 2
+        //APITableView.delegate = self
+        //APITableView.dataSource = self
+        let urlstring = "https://pokeapi.co/api/v2/pokemon/151"
+        guard let url = URL(string: urlstring) else {
+            exit(1)
+        }
+        testAPI(url: url)
+        
+    }
+}
+
+
+extension PokemonDetailsViewController{
+    //call this in the didload function
+    func testAPI(url: URL) {
+        print(url)
+        let request = URLRequest(url: url)
+        let session = URLSession.shared
+        let task: URLSessionDataTask = session.dataTask(with: request) {data,response,error in
+            //print(data!)
+            //print(response)
+            //print(error)
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("could not parse response")
+                exit(1)
+            }
+            let statusCode = 200...299 ~= httpResponse.statusCode
+            
+            guard statusCode else {
+                print(HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                exit(1)
+            }
+            guard let data = data else {
+                print("No Data")
+                exit(1)
+            }
+            print("the data is \(data)")
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
+                print("could not parse JSON")
+                exit(1)
+            }
+            print(json)
+        }
+        task.resume()
+        
+    }
+}
+
+//extension PokemonDetailsViewController: UITableViewDataSource{
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+//
+//
+//}
+
+extension PokemonDetailsViewController {
+    @IBAction func pokeCryButton(_ sender: Any) {
+        if audioPlayer?.play() == nil {
+            let alert = UIAlertController(title: "Error", message: "This Pokemon has No Cry", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            audioPlayer?.play()
+        }
     }
 }
 extension PokemonDetailsViewController {
@@ -44,16 +117,5 @@ extension PokemonDetailsViewController {
         viewController.pokémon = pokemon
         
         return viewController
-    }
-}
-extension PokemonDetailsViewController {
-    @IBAction func pokeCryButton(_ sender: Any) {
-        if audioPlayer?.play() == nil {
-            let alert = UIAlertController(title: "Error", message: "This Pokemon has No Cry", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            audioPlayer?.play()
-        }
     }
 }

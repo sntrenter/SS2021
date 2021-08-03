@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -76,12 +77,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2b-Ku-ffy">
-                                <rect key="frame" x="187.5" y="393" width="39" height="30.5"/>
+                                <rect key="frame" x="187.5" y="394" width="39" height="30"/>
                                 <state key="normal" title="!CRY!"/>
                                 <connections>
                                     <action selector="pokeCryButton:" destination="P19-GF-wJj" eventType="touchDown" id="pqE-Sx-B2V"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DmD-wO-ADL">
+                                <rect key="frame" x="0.0" y="424" width="414" height="438"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eVr-uC-0tN"/>
                         <color key="backgroundColor" red="0.86305764875342506" green="0.97259389437171928" blue="0.98328930139541626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -94,6 +99,7 @@
                             <constraint firstItem="gp2-YP-dmP" firstAttribute="centerY" secondItem="eVr-uC-0tN" secondAttribute="top" id="LXa-KC-lTB"/>
                             <constraint firstItem="lUW-0V-HHV" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="Oko-BH-Lhp"/>
                             <constraint firstItem="5J9-KZ-W8e" firstAttribute="top" secondItem="gp2-YP-dmP" secondAttribute="bottom" constant="8" symbolic="YES" id="VDc-Me-eVA"/>
+                            <constraint firstItem="DmD-wO-ADL" firstAttribute="leading" secondItem="eVr-uC-0tN" secondAttribute="leading" id="VxE-iF-qz8"/>
                             <constraint firstItem="5J9-KZ-W8e" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="WVC-E4-OQp"/>
                             <constraint firstItem="0ei-W5-0VA" firstAttribute="top" secondItem="bCk-qo-EUI" secondAttribute="bottom" constant="7" id="Y70-Ba-TTO"/>
                             <constraint firstItem="SKd-6z-wkf" firstAttribute="top" secondItem="lUW-0V-HHV" secondAttribute="bottom" constant="7" id="Z54-fA-Q2N"/>
@@ -107,10 +113,14 @@
                             <constraint firstItem="F2b-Ku-ffy" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="nee-O2-3GA"/>
                             <constraint firstItem="OLm-wV-R1w" firstAttribute="top" secondItem="SKd-6z-wkf" secondAttribute="bottom" constant="7" id="ngH-q1-iAv"/>
                             <constraint firstItem="25I-65-BH6" firstAttribute="top" secondItem="5J9-KZ-W8e" secondAttribute="bottom" constant="7.5" id="oq2-SG-FdD"/>
+                            <constraint firstItem="DmD-wO-ADL" firstAttribute="top" secondItem="F2b-Ku-ffy" secondAttribute="bottom" id="tKs-Mx-zZt"/>
+                            <constraint firstItem="eVr-uC-0tN" firstAttribute="bottom" secondItem="DmD-wO-ADL" secondAttribute="bottom" id="tWW-zW-Kkt"/>
+                            <constraint firstItem="DmD-wO-ADL" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="tzn-zk-PLw"/>
                             <constraint firstItem="25I-65-BH6" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="zJH-wy-pBO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="APITableView" destination="DmD-wO-ADL" id="SvY-XY-3bt"/>
                         <outlet property="abiltiyLabel" destination="lUW-0V-HHV" id="a2L-P9-bFN"/>
                         <outlet property="baseEXPLabel" destination="25I-65-BH6" id="djo-3K-aHv"/>
                         <outlet property="cryButton" destination="F2b-Ku-ffy" id="yTN-we-XUd"/>
@@ -129,4 +139,9 @@
             <point key="canvasLocation" x="-933.33333333333337" y="-105.13392857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
