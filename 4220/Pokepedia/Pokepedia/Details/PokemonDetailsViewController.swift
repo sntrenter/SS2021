@@ -1,87 +1,43 @@
 import UIKit
 import PokemonFoundation
-import AVFoundation
-import PokemonCryKit
 
 final class PokemonDetailsViewController: UIViewController {
         
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var baseEXPLabel: UILabel!
-    @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var weightlabel: UILabel!
-    @IBOutlet weak var speciesLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var abiltiyLabel: UILabel!
-    @IBOutlet weak var moveLabel: UILabel!
-    @IBOutlet weak var heldItemsLabel: UILabel!
-    @IBOutlet weak var cryButton: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
     
-    //Proj 2
-    @IBOutlet weak var APITableView: UITableView!
+    private var items: [FirstVCTableViewItem] = []
+    private let model = AbilitiesModel()
     
-    private var pokémon: Pokémon!
-    private var audioPlayer: AVAudioPlayer?
-    private var pokeAbilities: Pokemon?
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = "name: " +  (pokémon?.name ?? "Name doesn't exist!")
-        idLabel.text = "ID: " + String(pokémon?.id ?? 0)
-        baseEXPLabel.text =  "BaseEXP: " + String(pokémon?.baseExperience ?? 0)
-        heightLabel.text = "Height: " + String(pokémon?.height ?? 0)
-        weightlabel.text = "Weight: " + String(pokémon?.weight ?? 0)
-        speciesLabel.text = "Species: " + (pokémon?.species?.name ?? "No Species?")
-        typeLabel.text = "Type: " + (pokémon?.types?.first?.type?.name ?? "No Type?")
-        abiltiyLabel.text = "Ability: " + (pokémon.abilities?.first?.ability?.name ?? "No Abilty?")
-        moveLabel.text = "Move: " + (pokémon.moves?.first?.move?.name ?? "No Move?")
-        heldItemsLabel.text = "Held Item: " + (pokémon.heldItems?.first?.item?.name ?? "No Item?")
-        audioPlayer = PokemonCryProvider().audioPlayer(forPokémonWithDisplayName: pokémon?.displayName ?? "")
-        
-        //Proj 2
-        APITableView.delegate = self
-        APITableView.dataSource = self
-        //let urlstring = "https://pokeapi.co/api/v2/pokemon/151"
-        let urlstring = "https://pokeapi.co/api/v2/pokemon/" + String(pokémon?.id ?? 0)
-        guard let url = URL(string: urlstring) else {
-            exit(1)
-        }
-        sendAPI(url: url)
-        while pokeAbilities == nil {}//I know this is bad
-        print(pokeAbilities?.abilities.first?.ability.name ?? "didn't work")
-        
+        title = "Abilities"
+        tableView.delegate = self
+        tableView.dataSource = self
+        model.delegate = self
     }
 }
 
 extension PokemonDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let abilityViewController = AbilityDetailsViewController()
-        show(AbilityDetailsViewController.instance(pokemon: pokémon, url: pokeAbilities?.abilities[indexPath.row].ability.url ?? ""), sender: self)
-        print(indexPath)
-        //viewController(for: pokémon)
-        
+        let item = items[indexPath.row]
+        model.get(url: item.url)
     }
 }
-//extension PokemonDetailsViewController {
-//
-//    func viewController(for pokémon: Pokémon) -> UIViewController {
-//        //show(AbilityDetailsViewController, sender: self)
-//        return AbilityDetailsViewController.instance(pokemon: pokémon)
-//    }
-//}
+
 
 extension PokemonDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pokeAbilities?.abilities.count ?? 0
+        return items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = APITableView.dequeueReusableCell(withIdentifier: "PokeAbilityTableViewCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PokeAbilityTableViewCell") else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = pokeAbilities?.abilities[indexPath.row].ability.name ?? "Error"
-        cell.detailTextLabel?.text = String(pokeAbilities?.abilities[indexPath.row].slot ?? 0) 
+        let item = items[indexPath.row]
+        cell.textLabel?.text = item.name
+        cell.detailTextLabel?.text = item.detail
         
         return cell
     }
@@ -89,83 +45,99 @@ extension PokemonDetailsViewController: UITableViewDataSource {
 }
 
 extension PokemonDetailsViewController {
-    //call this in the didload function
-    func sendAPI(url: URL) {
+    
+    static func instance(items: [FirstVCTableViewItem]) -> PokemonDetailsViewController {
+        // swiftlint:disable:next force_cast
+        let viewController = UIStoryboard(name: "PokemonDetails", bundle: nil).instantiateInitialViewController() as! PokemonDetailsViewController
+        viewController.items = items
+        
+        return viewController
+    }
+}
+extension PokemonDetailsViewController: AbilitiesModelDelegate {
+    //Networking lecture - weak self, custom error
+    //GCD - Blocking UI, threading
+    //MVC revisited - apply above to project
+    func blockUI() {
+        //MVC revisited lecture
+    }
+    
+    func displayError(error: Error) {
+        print(error)
+    }
+    
+    func displayAbility(ability: Ability) {
+        print(ability)
+        //show
+        //self.show(AbilityDetailsViewController, sender: )
+    }
+}
+
+protocol AbilitiesModelDelegate: AnyObject {
+    //Block UI
+    func blockUI()
+    //display error
+    func displayError(error: Error)
+    //Display ability object
+    func displayAbility(ability: Ability)
+}
+
+struct Ability: Decodable {
+    let id: Int
+    let name: String
+    let isMainSeries: Bool
+    let generation: NamedAPIResource
+    let pokemon: [AbilityPokemon]
+}
+struct AbilityPokemon: Decodable {
+    let pokemon: Name
+}
+struct Name: Decodable {
+    let name: String
+}
+
+final class AbilitiesModel {
+    weak var delegate: AbilitiesModelDelegate?
+    
+    func get(url: URL) {
+        delegate?.blockUI()
         print(url)
         let request = URLRequest(url: url)
         let session = URLSession.shared
-        let task: URLSessionDataTask = session.dataTask(with: request) {data, response, error in
-            if error != nil {
-                print("fml")
-                exit(1)
+        let task: URLSessionDataTask = session.dataTask(with: request) { [weak self] data, response, error in
+            if let error = error {
+                self?.delegate?.displayError(error: error)
+                return
             }
             guard let httpResponse = response as? HTTPURLResponse else {
-                print("could not parse response")
-                exit(1)
+                //delegate?.displayError(error: error) create custom error
+                return
+                
             }
             let statusCode = 200...299 ~= httpResponse.statusCode
             
             guard statusCode else {
-                print(HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-                exit(1)
+                //print(HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
+                //delegate?.displayError(error: error)
+                return
+                
             }
             guard let data = data else {
-                print("No Data")
-                exit(1)
+                //delegate?.displayError(error: error)
+                return
             }
-            print("the data is \(data)")
-            guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else {
-                print("could not parse JSON")
-                exit(1)
-            }
+            
             do {
-                let datajson: Data = try JSONSerialization.data(withJSONObject: json, options: [])
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let abilities  = try decoder.decode(Pokemon.self, from: datajson)
-                self.pokeAbilities = abilities
-
+                let ability = try decoder.decode(Ability.self, from: data)
+                //self.pokeAbilities = abilities
+                
+                self?.delegate?.displayAbility(ability: ability)
             } catch {
-                print(error)
+                self?.delegate?.displayError(error: error)
             }
         }
         task.resume()
-    }
-}
-extension PokemonDetailsViewController {
-    struct Ability: Decodable {
-        let name: String
-        let url: String
-    }
-    struct Abilities: Decodable {
-        let isHidden: Bool
-        let slot: Int
-        let ability: Ability
-        
-    }
-    struct Pokemon: Decodable {
-        let abilities: [Abilities]
-    }
-}
-
-extension PokemonDetailsViewController {
-    @IBAction func pokeCryButton(_ sender: Any) {
-        if audioPlayer?.play() == nil {
-            let alert = UIAlertController(title: "Error", message: "This Pokemon has No Cry", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            audioPlayer?.play()
-        }
-    }
-}
-extension PokemonDetailsViewController {
-    
-    static func instance(pokemon: Pokémon) -> PokemonDetailsViewController {
-        // swiftlint:disable:next force_cast
-        let viewController = UIStoryboard(name: "PokemonDetails", bundle: nil).instantiateInitialViewController() as! PokemonDetailsViewController
-        viewController.pokémon = pokemon
-        
-        return viewController
     }
 }

@@ -13,7 +13,25 @@ final class ViewPokemonDetailsAction: PokédexMenuItemAction {
 extension ViewPokemonDetailsAction {
     
     func viewController(for pokémon: Pokémon) -> UIViewController {
-        
-        return PokemonDetailsViewController.instance(pokemon: pokémon)
+        let itemsToDisplayInFirstVC: [FirstVCTableViewItem] = pokémon.abilities?.compactMap { ability in
+            guard
+                let name = ability.ability?.name?.capitalized,
+                let slot = ability.slot,
+                let url = ability.ability?.url
+            else {
+                return nil
+            }
+            
+            return FirstVCTableViewItem(name: name, detail: "Slot #\(slot)", url: url)
+        }
+        ?? []
+        return PokemonDetailsViewController.instance(items: itemsToDisplayInFirstVC)
     }
 }
+struct FirstVCTableViewItem { //RENAME
+    let name: String
+    let detail: String
+    let url: URL
+}
+
+
