@@ -22,6 +22,7 @@ final class PokemonDetailsViewController: UIViewController {
     
     private var pokémon: Pokémon!
     private var audioPlayer: AVAudioPlayer?
+    private var pokeAbilities: Pokemon?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,28 +39,62 @@ final class PokemonDetailsViewController: UIViewController {
         audioPlayer = PokemonCryProvider().audioPlayer(forPokémonWithDisplayName: pokémon?.displayName ?? "")
         
         //Proj 2
-        //APITableView.delegate = self
-        //APITableView.dataSource = self
+        APITableView.delegate = self
+        APITableView.dataSource = self
         //let urlstring = "https://pokeapi.co/api/v2/pokemon/151"
         let urlstring = "https://pokeapi.co/api/v2/pokemon/" + String(pokémon?.id ?? 0)
         guard let url = URL(string: urlstring) else {
             exit(1)
         }
-        testAPI(url: url)
+        sendAPI(url: url)
+        while pokeAbilities == nil {}//I know this is bad
+        print(pokeAbilities?.abilities.first?.ability.name ?? "didn't work")
         
     }
 }
 
+extension PokemonDetailsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //let abilityViewController = AbilityDetailsViewController()
+        show(AbilityDetailsViewController.instance(pokemon: pokémon, url: pokeAbilities?.abilities[indexPath.row].ability.url ?? ""), sender: self)
+        print(indexPath)
+        //viewController(for: pokémon)
+        
+    }
+}
+//extension PokemonDetailsViewController {
+//
+//    func viewController(for pokémon: Pokémon) -> UIViewController {
+//        //show(AbilityDetailsViewController, sender: self)
+//        return AbilityDetailsViewController.instance(pokemon: pokémon)
+//    }
+//}
+
+extension PokemonDetailsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return pokeAbilities?.abilities.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = APITableView.dequeueReusableCell(withIdentifier: "PokeAbilityTableViewCell") else {
+            return UITableViewCell()
+        }
+        cell.textLabel?.text = pokeAbilities?.abilities[indexPath.row].ability.name ?? "Error"
+        cell.detailTextLabel?.text = String(pokeAbilities?.abilities[indexPath.row].slot ?? 0) 
+        
+        return cell
+    }
+
+}
+
 extension PokemonDetailsViewController {
     //call this in the didload function
-    func testAPI(url: URL) {
+    func sendAPI(url: URL) {
         print(url)
         let request = URLRequest(url: url)
         let session = URLSession.shared
         let task: URLSessionDataTask = session.dataTask(with: request) {data, response, error in
-            //print(data!)
-            //print(response)
-            //print(error)
             if error != nil {
                 print("fml")
                 exit(1)
@@ -83,13 +118,12 @@ extension PokemonDetailsViewController {
                 print("could not parse JSON")
                 exit(1)
             }
-            //print(json)
             do {
-            let datajson: Data = try JSONSerialization.data(withJSONObject: json, options: [])
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let abilities  = try decoder.decode(Pokemon.self, from: datajson)
-            print(abilities)
+                let datajson: Data = try JSONSerialization.data(withJSONObject: json, options: [])
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let abilities  = try decoder.decode(Pokemon.self, from: datajson)
+                self.pokeAbilities = abilities
 
             } catch {
                 print(error)
@@ -104,7 +138,7 @@ extension PokemonDetailsViewController {
         let url: String
     }
     struct Abilities: Decodable {
-        let isHidden: Bool 
+        let isHidden: Bool
         let slot: Int
         let ability: Ability
         
@@ -113,22 +147,6 @@ extension PokemonDetailsViewController {
         let abilities: [Abilities]
     }
 }
-
-final class AbilityDetailsViewController: UIViewController {
-    
-}
-
-//extension PokemonDetailsViewController: UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        <#code#>
-//    }
-//
-//
-//}
 
 extension PokemonDetailsViewController {
     @IBAction func pokeCryButton(_ sender: Any) {
