@@ -40,7 +40,8 @@ final class PokemonDetailsViewController: UIViewController {
         //Proj 2
         //APITableView.delegate = self
         //APITableView.dataSource = self
-        let urlstring = "https://pokeapi.co/api/v2/pokemon/151"
+        //let urlstring = "https://pokeapi.co/api/v2/pokemon/151"
+        let urlstring = "https://pokeapi.co/api/v2/pokemon/" + String(pokémon?.id ?? 0)
         guard let url = URL(string: urlstring) else {
             exit(1)
         }
@@ -49,17 +50,20 @@ final class PokemonDetailsViewController: UIViewController {
     }
 }
 
-
-extension PokemonDetailsViewController{
+extension PokemonDetailsViewController {
     //call this in the didload function
     func testAPI(url: URL) {
         print(url)
         let request = URLRequest(url: url)
         let session = URLSession.shared
-        let task: URLSessionDataTask = session.dataTask(with: request) {data,response,error in
+        let task: URLSessionDataTask = session.dataTask(with: request) {data, response, error in
             //print(data!)
             //print(response)
             //print(error)
+            if error != nil {
+                print("fml")
+                exit(1)
+            }
             guard let httpResponse = response as? HTTPURLResponse else {
                 print("could not parse response")
                 exit(1)
@@ -79,11 +83,39 @@ extension PokemonDetailsViewController{
                 print("could not parse JSON")
                 exit(1)
             }
-            print(json)
+            //print(json)
+            do {
+            let datajson: Data = try JSONSerialization.data(withJSONObject: json, options: [])
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            let abilities  = try decoder.decode(Pokemon.self, from: datajson)
+            print(abilities)
+
+            } catch {
+                print(error)
+            }
         }
         task.resume()
+    }
+}
+extension PokemonDetailsViewController {
+    struct Ability: Decodable {
+        let name: String
+        let url: String
+    }
+    struct Abilities: Decodable {
+        let isHidden: Bool 
+        let slot: Int
+        let ability: Ability
         
     }
+    struct Pokemon: Decodable {
+        let abilities: [Abilities]
+    }
+}
+
+final class AbilityDetailsViewController: UIViewController {
+    
 }
 
 //extension PokemonDetailsViewController: UITableViewDataSource{
