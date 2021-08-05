@@ -103,7 +103,7 @@ final class AbilitiesModel {
     
     func get(url: URL) {
         delegate?.blockUI()
-        print(url)
+        //print(url)
         let request = URLRequest(url: url)
         let session = URLSession.shared
         let task: URLSessionDataTask = session.dataTask(with: request) { [weak self] data, response, error in
@@ -136,7 +136,6 @@ final class AbilitiesModel {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let ability = try decoder.decode(Ability.self, from: data)
-                //self.pokeAbilities = abilities
                 
                 self?.delegate?.displayAbility(ability: ability)
             } catch {
