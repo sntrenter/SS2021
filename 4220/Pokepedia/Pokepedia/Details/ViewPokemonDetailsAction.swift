@@ -33,5 +33,3 @@ struct FirstVCTableViewItem { //RENAME
     let detail: String
     let url: URL
 }
-
-

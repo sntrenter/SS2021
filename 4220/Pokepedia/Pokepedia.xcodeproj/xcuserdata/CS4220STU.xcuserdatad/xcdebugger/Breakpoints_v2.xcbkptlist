@@ -14,8 +14,8 @@
             filePath = "Pokepedia/Details/PokemonDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "PokemonDetailsViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -49,22 +49,6 @@
             startingLineNumber = "28"
             endingLineNumber = "28"
             landmarkName = "viewController(for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "544C0F4E-EFC6-47B4-97B1-67A3D59CA4BE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pokepedia/Details/PokemonDetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "displayAbility(ability:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

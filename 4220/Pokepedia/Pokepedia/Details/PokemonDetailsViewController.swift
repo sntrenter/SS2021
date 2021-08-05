@@ -25,7 +25,6 @@ extension PokemonDetailsViewController: UITableViewDelegate {
     }
 }
 
-
 extension PokemonDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,16 +62,14 @@ extension PokemonDetailsViewController: AbilitiesModelDelegate {
         activityIndicator.startAnimating()
     }
     
-    func displayError(error: Error) {
+    func displayError(error: String) {
         print(error)
     }
     
     func displayAbility(ability: Ability) {
-        print(ability)
-        //show
         DispatchQueue.main.async { [weak self] in
             self?.activityIndicator.stopAnimating()
-            self?.show(AbilityDetailsViewController.instance(), sender: self)
+            self?.show(AbilityDetailsViewController.instance(ability: ability), sender: self)
         }
 
     }
@@ -82,7 +79,7 @@ protocol AbilitiesModelDelegate: AnyObject {
     //Block UI
     func blockUI()
     //display error
-    func displayError(error: Error)
+    func displayError(error: String)
     //Display ability object
     func displayAbility(ability: Ability)
 }
@@ -111,24 +108,27 @@ final class AbilitiesModel {
         let session = URLSession.shared
         let task: URLSessionDataTask = session.dataTask(with: request) { [weak self] data, response, error in
             if let error = error {
-                self?.delegate?.displayError(error: error)
+                self?.delegate?.displayError(error: error.localizedDescription)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse else {
                 //delegate?.displayError(error: error) create custom error
+                let error = "Error Getting HTTPResponse"
+                self?.delegate?.displayError(error: error)
                 return
                 
             }
             let statusCode = 200...299 ~= httpResponse.statusCode
             
             guard statusCode else {
-                //print(HTTPURLResponse.localizedString(forStatusCode: httpResponse.statusCode))
-                //delegate?.displayError(error: error)
+                let error = "Error: Status Came Back bad -> " + String(httpResponse.statusCode)
+                self?.delegate?.displayError(error: error)
                 return
                 
             }
             guard let data = data else {
-                //delegate?.displayError(error: error)
+                let error = "Error: data Came Back bad"
+                self?.delegate?.displayError(error: error)
                 return
             }
             
@@ -140,7 +140,7 @@ final class AbilitiesModel {
                 
                 self?.delegate?.displayAbility(ability: ability)
             } catch {
-                self?.delegate?.displayError(error: error)
+                self?.delegate?.displayError(error: error.localizedDescription)
             }
         }
         task.resume()
