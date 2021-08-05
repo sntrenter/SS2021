@@ -49,17 +49,27 @@
                                     <outlet property="dataSource" destination="P19-GF-wJj" id="mUe-gd-EF7"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="rzQ-H0-aM1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eVr-uC-0tN"/>
                         <color key="backgroundColor" red="0.86305764875342506" green="0.97259389437171928" blue="0.98328930139541626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="rzQ-H0-aM1" firstAttribute="leading" secondItem="eVr-uC-0tN" secondAttribute="leading" id="1kK-sa-szv"/>
                             <constraint firstItem="DmD-wO-ADL" firstAttribute="leading" secondItem="eVr-uC-0tN" secondAttribute="leading" id="7Y6-Yl-aIW"/>
                             <constraint firstItem="DmD-wO-ADL" firstAttribute="trailing" secondItem="eVr-uC-0tN" secondAttribute="trailing" id="GtH-lp-J5Z"/>
                             <constraint firstItem="DmD-wO-ADL" firstAttribute="top" secondItem="eVr-uC-0tN" secondAttribute="top" id="IXi-An-PlG"/>
+                            <constraint firstItem="eVr-uC-0tN" firstAttribute="trailing" secondItem="rzQ-H0-aM1" secondAttribute="trailing" id="VVH-8t-D19"/>
                             <constraint firstItem="DmD-wO-ADL" firstAttribute="bottom" secondItem="eVr-uC-0tN" secondAttribute="bottom" id="bHo-Fv-mvg"/>
+                            <constraint firstItem="rzQ-H0-aM1" firstAttribute="top" secondItem="eVr-uC-0tN" secondAttribute="top" id="dLR-T3-9BQ"/>
+                            <constraint firstItem="rzQ-H0-aM1" firstAttribute="centerY" secondItem="eVr-uC-0tN" secondAttribute="centerY" id="fV7-jk-pK8"/>
+                            <constraint firstItem="rzQ-H0-aM1" firstAttribute="centerX" secondItem="eVr-uC-0tN" secondAttribute="centerX" id="faz-gG-joZ"/>
+                            <constraint firstItem="eVr-uC-0tN" firstAttribute="bottom" secondItem="rzQ-H0-aM1" secondAttribute="bottom" id="uv2-ux-ffx"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="rzQ-H0-aM1" id="YPC-vY-lqi"/>
                         <outlet property="tableView" destination="DmD-wO-ADL" id="SvY-XY-3bt"/>
                     </connections>
                 </viewController>

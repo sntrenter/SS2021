@@ -4,6 +4,7 @@ import PokemonFoundation
 final class PokemonDetailsViewController: UIViewController {
         
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     private var items: [FirstVCTableViewItem] = []
     private let model = AbilitiesModel()
@@ -59,7 +60,7 @@ extension PokemonDetailsViewController: AbilitiesModelDelegate {
     //GCD - Blocking UI, threading
     //MVC revisited - apply above to project
     func blockUI() {
-        //MVC revisited lecture
+        activityIndicator.startAnimating()
     }
     
     func displayError(error: Error) {
@@ -69,7 +70,11 @@ extension PokemonDetailsViewController: AbilitiesModelDelegate {
     func displayAbility(ability: Ability) {
         print(ability)
         //show
-        //self.show(AbilityDetailsViewController, sender: )
+        DispatchQueue.main.async { [weak self] in
+            self?.activityIndicator.stopAnimating()
+            self?.show(AbilityDetailsViewController.instance(), sender: self)
+        }
+
     }
 }
 
