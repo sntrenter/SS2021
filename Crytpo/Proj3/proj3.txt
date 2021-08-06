@@ -1,0 +1,102 @@
+----------TASK1----------
+3 files -> 112 bit, 1024 bit, 8,000 bit
+########################################
+number of chars:  11
+hex:
+787ec76dcafd20c1908eb0936a12f91edd105ab5cd7ecc2b1ae2032648345dff
+binary:
+0111100001111110110001110110110111001010111111010010000011000001100100001000111010110000100100110110101000010010111110010001111011011101000100000101101010110101110011010111111011001100001010110001101011100010000000110010011001001000001101000101110111111111
+checking how many times I can
+hash in 1 second:
+Number of hash:  882476
+compair to black2b
+Number of hash (black2b):  1166814
+########################################
+number of chars:  128
+hex:
+58645c01d609b42e9306f2181bcac804cfa9f3e5517610c80ab0c8e440f8c0db
+binary:
+0101100001100100010111000000000111010110000010011011010000101110100100110000011011110010000110000001101111001010110010000000010011001111101010011111001111100101010100010111011000010000110010000000101010110000110010001110010001000000111110001100000011011011
+checking how many times I can
+hash in 1 second:
+Number of hash:  763018
+compair to black2b
+Number of hash (black2b):  1288466
+########################################
+number of chars:  1000
+hex:
+9103c2f5d7f45bdfa334b9060b70f46dc90f32b74baf6ca0c406a474dc9ecda1
+binary:
+1001000100000011110000101111010111010111111101000101101111011111101000110011010010111001000001100000101101110000111101000110110111001001000011110011001010110111010010111010111101101100101000001100010000000110101001000111010011011100100111101100110110100001
+checking how many times I can
+hash in 1 second:
+Number of hash:  330852
+compair to black2b
+Number of hash (black2b):  411493
+black2b seems like it is faster, although after reading docs it seems to 
+be optimised for use like this.
+on the shortest string it would take
+seconds: 116,132,473,517,195,094,244,802,501,139,527,864,022,720,578,681,756,793,200,327,744,627,416,086.18855465368996528825
+Days: 1,344,125,850,893,461,738,944,473,392,818,609,537,300,006,697,705,518,439,818,608,155,409.90840496012330659682
+centurys: 13,441,258,508,934,617,389,444,733,928,186,095,373,000,066,977,055,184,398,186,081,554.09908404960123306596
+this timescale makes anything you do seem insignificant
+CPU: Intel Core i5-6600k @3.5GHz
+one core, multiprocessing wouldn't do much :(
+----------TASK2----------
+hash outputs + bytestrings have been shorted for readability
+['1', '11', '110', '1105', '11051', '110519', '1105199']
+####################
+time it took:  0.0  seconds!
+overall time:  0.0  seconds!
+digits we want: 1
+sha output:  1e43de5661
+bytestring:  b'\xc3i\x1e\x13\xd3K\xd0Y\xd4\xcf'
+####################
+time it took:  0.001  seconds!
+overall time:  0.002  seconds!
+digits we want: 11
+sha output:  1138e4800c
+bytestring:  b't\x03\xbdnxyp\xd5^\x05'
+####################
+time it took:  0.0199  seconds!
+overall time:  0.0259  seconds!
+digits we want: 110
+sha output:  110fabc31a
+bytestring:  b'\xab\x89\x08$\x93\x84\xdc\xbf\xaa\x90'
+####################
+time it took:  0.003  seconds!
+overall time:  0.0309  seconds!
+digits we want: 1105
+sha output:  110528634f
+bytestring:  b'q%\x8b\xf6g\x83\xed\x11\x1c\x06'
+####################
+time it took:  2.3802  seconds!
+overall time:  2.4121  seconds!
+digits we want: 11051
+sha output:  11051a9197
+bytestring:  b'\x86k9\xcf\\:e\xe4\xe0\xd7'
+####################
+time it took:  50.2865  seconds!
+overall time:  52.6996  seconds!
+digits we want: 110519
+sha output:  110519fba0
+bytestring:  b'\x16\xa5\x07J\xe5S\x9d\xf9\xaf\xf6'
+####################
+time it took:  12.2453  seconds!
+overall time:  64.9469  seconds!
+digits we want: 1105199
+sha output:  1105199416
+bytestring:  b'\xe6\xd0IZm\xf4/\x8d\x91\xf5'
+####################
+total time it took:  64.9469  seconds!
+lets think of sha256 as outputing 64 hex digits instead of the bits it does output
+for each character "n" characters it wants to guess right it has to generate 16^n guesses (maximum)
+for the first few this doesn't matter but for only 6 characters it has a 
+possible of 16777216 different combinations with only one being right    
+I've found that it would take too long to find to find the full birthday 
+text so I've subbed a shorter bit of it in.
+it should be a number small enough that with multiprocessing I should be 
+able to calculate it in a reasonable time
+my estimations are all overthe place but it seems like it would take like 35 min for 6 digits
+it seems like sometimes while running it I get lucky and generate a hash 
+that matches the text fairly quickly
